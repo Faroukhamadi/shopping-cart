@@ -4,10 +4,9 @@ import cart from '../images/cart.png';
 import arrow from '../images/arrow.png';
 import { useNavigate } from 'react-router-dom';
 
-// onClick={() => navigate(`/${product.index}`, { replace: true })}
-
 const Product = (props) => {
   const navigate = useNavigate();
+  // const newArray = [...props.item]
   return (
     <div className="prod">
       <img className="prod-pic" src={props.item.source} alt="shoe" />
@@ -18,6 +17,19 @@ const Product = (props) => {
           <button className="prod-buy">
             <img src={cart} alt="cart" /> ADD TO CART
           </button>
+          <div className="prod-count">
+            <button
+              onClick={() =>
+                props.setInfo({ ...props.item, count: props.item.count + 1 })
+              }
+
+              // onClick={() => props.setInfo(props.item[index])}
+            >
+              -
+            </button>
+            <p>{props.item.count}</p>
+            <button>+</button>
+          </div>
         </div>
         <div className="container2">
           <h2

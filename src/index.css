@@ -19,6 +19,7 @@ body,
 }
 
 .header {
+  z-index: 1;
   justify-content: space-between;
   background-color: black;
   color: #dfdcdc;
@@ -182,6 +183,38 @@ a {
   opacity: 0.6;
 }
 
+.home {
+  background-color: black;
+  height: 80vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Comfortaa';
+}
+
+.home > h1 {
+  margin-top: 10rem;
+}
+
+.home > button {
+  width: 30vw;
+  height: 10vh;
+  margin-top: 3rem;
+  background-color: rgb(202, 207, 211);
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: x-large;
+  transition: 300ms opacity ease-in-out;
+}
+
+.home > button:hover {
+  opacity: 0.4;
+}
+
 .prod {
   background-color: black;
   height: 80vh;
@@ -225,6 +258,7 @@ a {
   transition: 1s background-color cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 7px;
   margin-top: 2rem;
+  font-size: large;
 }
 
 .prod-buy:hover {
@@ -237,4 +271,26 @@ a {
 
 .prod-back {
   cursor: pointer;
+}
+
+.prod-count {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.prod-count > button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+  width: 2rem;
+  font-family: 'Comfortaa';
+  font-weight: 900;
+  font-size: large;
+}
+
+.prod-count > p {
+  border: 1px solid white;
+  cursor: default;
+  padding: 5px;
 }

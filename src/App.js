@@ -15,6 +15,7 @@ import amine from './images/amine.png';
 import courtVisionLo from './images/court-vision-lo.png';
 import momo from './images/momo.png';
 import sport from './images/sport.png';
+import Home from './components/Home';
 
 const App = () => {
   const [info, setInfo] = useState([
@@ -23,95 +24,95 @@ const App = () => {
       price: 40,
       index: 0,
       source: airForceO7,
+      count: 0,
     },
     {
       name: 'Nike Air Force Ala',
       price: 69,
       index: 1,
       source: airForceAla,
+      count: 0,
     },
     {
       name: 'Nike Air Force GORE',
       price: 54,
       index: 2,
       source: airForceGore,
+      count: 0,
     },
     {
       name: 'Nike Air Max Fama200',
       price: 19,
       index: 3,
       source: airMax1,
+      count: 0,
     },
     {
       name: 'Nike Air Max 2',
       price: 10,
       index: 4,
       source: airMax2,
+      count: 0,
     },
     {
       name: 'Nike Air Max Centre Ville',
       price: 25,
       index: 5,
       source: airMax3,
+      count: 0,
     },
     {
       name: 'Nike Air Jordan Amine',
       price: 70,
       index: 6,
       source: amine,
+      count: 0,
     },
     {
       name: 'Nike Court Vision',
       price: 55,
       index: 7,
       source: courtVisionLo,
+      count: 0,
     },
     {
       name: 'Nike Air Force MOMO',
       price: 43,
       index: 8,
       source: momo,
+      count: 0,
     },
     {
       name: 'Nike Air Max 3',
       price: 45,
       index: 9,
       source: sport,
+      count: 0,
     },
   ]);
 
+  const [cart, setCart] = useState([]);
+
   const RouteLinks = info.map((item, index) => (
-    <Route path={`${item.index}`} element={<Product item={item} />} />
+    <Route
+      path={`${item.index}`}
+      element={<Product item={item} setInfo={setInfo} info={info} />}
+    />
   ));
 
   return (
     <div className="app">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Main info={info} />} />
           {RouteLinks}
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 };
 
 export default App;
-{
-  /* 
-//   return (
-//     <div className="main">
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/shop" element={<Products info={info} />} />
-//           {RouteLinks}
-//         </Routes>
-//       </BrowserRouter>
-//     </div>
-//   );
-// };
-
-// export default Main; */
-}
