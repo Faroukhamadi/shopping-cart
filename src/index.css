@@ -230,3 +230,11 @@ a {
 .prod-buy:hover {
   background-color: #25bd5f;
 }
+
+.prod-back:hover {
+  opacity: 0.5;
+}
+
+.prod-back {
+  cursor: pointer;
+}
