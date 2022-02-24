@@ -19,16 +19,30 @@ const Product = (props) => {
           </button>
           <div className="prod-count">
             <button
-              onClick={() =>
-                props.setInfo({ ...props.item, count: props.item.count + 1 })
-              }
-
-              // onClick={() => props.setInfo(props.item[index])}
+              onClick={() => {
+                let info = [...props.info];
+                let item = { ...info[props.item.index] };
+                item.count > 0
+                  ? (item.count = item.count - 1)
+                  : (item.count = item.count);
+                info[props.item.index] = item;
+                props.setInfo(info);
+              }}
             >
               -
             </button>
             <p>{props.item.count}</p>
-            <button>+</button>
+            <button
+              onClick={() => {
+                let info = [...props.info];
+                let item = { ...info[props.item.index] };
+                item.count = item.count + 1;
+                info[props.item.index] = item;
+                props.setInfo(info);
+              }}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="container2">

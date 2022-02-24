@@ -96,7 +96,15 @@ const App = () => {
   const RouteLinks = info.map((item, index) => (
     <Route
       path={`${item.index}`}
-      element={<Product item={item} setInfo={setInfo} info={info} />}
+      element={
+        <Product
+          item={item}
+          setInfo={setInfo}
+          info={info}
+          cart={cart}
+          setCart={setCart}
+        />
+      }
     />
   ));
 
