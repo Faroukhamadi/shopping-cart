@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://use.typekit.net/edq7vic.css');
 
 * {
   margin: 0;
@@ -14,10 +16,10 @@ body,
   min-height: 100vh;
   flex-direction: column;
   display: flex;
-  font-family: 'Comfortaa';
 }
 
 .header {
+  justify-content: space-between;
   background-color: black;
   color: #dfdcdc;
   position: sticky;
@@ -25,26 +27,206 @@ body,
   display: flex;
   align-items: center;
   top: 0;
+  font-family: 'Comfortaa';
+}
+
+.header > h1 {
+  margin-left: 5%;
+}
+
+.header > .links {
+  margin: 0px -15%;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-right: 7%;
+}
+
+.link1,
+.link2 {
+  position: relative;
+}
+
+.link1:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #dfdcdc;
+  transition: width 0.2s ease 0s, left 0.2s ease 0s;
+  width: 0;
+}
+.link1:hover:after {
+  width: 100%;
+  left: 0;
+}
+.link2:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #dfdcdc;
+  transition: width 0.2s ease 0s, left 0.2s ease 0s;
+  width: 0;
+}
+.link2:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.header > a {
+  opacity: 0.8;
+  transition: 150ms opacity ease-in-out;
+}
+
+.header > a:hover {
+  opacity: 0.9;
+}
+
+.header > h1 {
+  cursor: pointer;
+}
+
+.header > a > h1 {
+  color: white;
+  font-weight: 300;
+  margin-left: 0.3rem;
+}
+
+.logo > h1 {
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.links {
+  font-weight: 400;
+}
+
+.first {
+  margin-top: 2rem;
 }
 
 .main {
-  background-color: pink;
-  height: 200vh;
+  background-color: black;
+  height: 220vh;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.square {
-  width: 40vh;
-  height: 40vh;
-  background-color: red;
-  display: block;
-}
-
 .footer {
-  background-color: orchid;
-  margin-top: auto;
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 7vh;
+  border-top: 1px solid white;
+  font-family: 'Inter', sans-serif;
+}
+.footer > a {
+  margin-left: 1rem;
+  transition: 150ms opacity ease-in-out;
+}
+
+.footer > a:hover {
+  opacity: 0.7;
+}
+
+.product-price,
+.product-desc {
+  color: white;
+  font-family: 'Inter';
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 3rem;
+}
+
+.product > img {
+  height: 35vh;
+  cursor: pointer;
+  width: 25vw;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-pic:hover + .product-info {
+  opacity: 0.6;
+}
+
+.product-pic:hover {
+  opacity: 0.6;
+}
+
+.product-info:hover {
+  opacity: 0.6;
+}
+
+.prod {
+  background-color: black;
+  height: 80vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: 'Comfortaa';
+}
+
+.prod > img {
+  width: 26vw;
+  height: 45vh;
+  margin-right: 3rem;
+  margin-top: 7rem;
+}
+
+.prod-info {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container2 {
+  margin-bottom: 12rem;
+  margin-left: 12rem;
+}
+
+.prod-buy {
+  background-color: #149948;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: white;
+  font-family: 'Comfortaa';
+  width: 15vw;
+  height: 5.5vh;
+  border: none;
+  cursor: pointer;
+  transition: 1s background-color cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 7px;
+  margin-top: 2rem;
+}
+
+.prod-buy:hover {
+  background-color: #25bd5f;
 }
