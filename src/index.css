@@ -352,3 +352,14 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
+
+.purchase {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: 'Comfortaa';
+  font-size: large;
+}

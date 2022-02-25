@@ -17,6 +17,7 @@ import momo from './images/momo.png';
 import sport from './images/sport.png';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
+import Purchase from './components/Purchase';
 
 const App = () => {
   const [info, setInfo] = useState([
@@ -126,6 +127,7 @@ const App = () => {
             path="/checkout"
             element={<Checkout total={total} cart={cart} info={info} />}
           />
+          <Route path="/purchase" element={<Purchase />} />
           {RouteLinks}
         </Routes>
         <Footer />

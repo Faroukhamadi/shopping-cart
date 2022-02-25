@@ -1,5 +1,5 @@
 import React from 'react';
-import airForce07 from "../images/air-force-'07.png";
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = (props) => {
   const cart = props.cart.map((item) => (
@@ -12,10 +12,15 @@ const Checkout = (props) => {
     </div>
   ));
 
+  const navigate = useNavigate();
+
   return (
     <div className="container69">
       <h2 className="checkout-amount">Total Amount: ${props.total}.00</h2>
-      <button>Complete Order</button>
+      {/* TODO: OnClick here for the goodbye message */}
+      <button onClick={() => navigate('/purchase', { replace: true })}>
+        Complete Order
+      </button>
       {cart}
     </div>
   );
