@@ -4,7 +4,7 @@ import cart from '../images/cart.png';
 
 // onClick={() => navigate(`/${product.index}`, { replace: true })}
 
-const Header = () => {
+const Header = (props) => {
   const navigate = useNavigate();
 
   return (
@@ -22,9 +22,14 @@ const Header = () => {
       >
         SHOP
       </h1>
-      <a href="#">
+      <a
+        style={{
+          cursor: 'pointer',
+        }}
+        onClick={() => navigate('/checkout', { replace: true })}
+      >
         <img src={cart} alt="cart" />
-        <h1>1</h1>
+        <h1>{props.itemCount}</h1>
       </a>
     </div>
   );

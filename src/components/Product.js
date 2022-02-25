@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Product = (props) => {
   const navigate = useNavigate();
-  // const newArray = [...props.item]
   return (
     <div className="prod">
       <img className="prod-pic" src={props.item.source} alt="shoe" />
@@ -22,11 +21,15 @@ const Product = (props) => {
               onClick={() => {
                 let info = [...props.info];
                 let item = { ...info[props.item.index] };
-                item.count > 0
-                  ? (item.count = item.count - 1)
-                  : (item.count = item.count);
-                info[props.item.index] = item;
-                props.setInfo(info);
+                if (item.count > 0) {
+                  item.count = item.count - 1;
+                  info[props.item.index] = item;
+                  props.setInfo(info);
+                  props.setItemCount(props.itemCount - 1);
+                  props.setTotal(props.total - props.item.price);
+                } else {
+                  item.count = item.count;
+                }
               }}
             >
               -
@@ -39,6 +42,15 @@ const Product = (props) => {
                 item.count = item.count + 1;
                 info[props.item.index] = item;
                 props.setInfo(info);
+                props.setItemCount(props.itemCount + 1);
+                props.setTotal(props.total + props.item.price);
+                if (
+                  props.cart.find(
+                    (element) => element.name === props.item.name
+                  ) === undefined
+                ) {
+                  props.setCart([...props.cart, props.item]);
+                }
               }}
             >
               +

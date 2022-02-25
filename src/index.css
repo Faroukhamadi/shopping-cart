@@ -294,3 +294,61 @@ a {
   cursor: default;
   padding: 5px;
 }
+
+.checkout {
+  background-color: black;
+  height: 80vh;
+  width: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Comfortaa';
+}
+
+.checkout-pic {
+  width: 25vw;
+  height: 35vh;
+  margin-left: 2rem;
+}
+
+.checkout-desc {
+  margin: 2rem 0;
+}
+.checkout-desc,
+.checkout-price {
+  margin-left: 2rem;
+}
+
+.container69 {
+  height: 80vh;
+
+  display: flex;
+  background-color: black;
+  color: white;
+  font-family: 'Comfortaa';
+}
+
+.container69 > button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 7vh;
+  width: 17vh;
+  font-family: 'Comfortaa';
+  font-weight: bolder;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: 300ms opacity ease-in-out;
+}
+
+.container69 > button:hover {
+  opacity: 0.6;
+}
+
+.checkout-amount {
+  display: flex;
+  flex-wrap: wrap;
+}

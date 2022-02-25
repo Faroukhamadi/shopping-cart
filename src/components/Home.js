@@ -8,7 +8,13 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Welcome To SHOZILLA</h1>
+      <h1
+        style={{
+          cursor: 'default',
+        }}
+      >
+        WELCOME TO SHOZILLA
+      </h1>
       <button onClick={() => navigate('/shop', { replace: true })}>
         GO SHOPPING
       </button>

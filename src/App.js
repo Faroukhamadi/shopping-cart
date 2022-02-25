@@ -16,6 +16,7 @@ import courtVisionLo from './images/court-vision-lo.png';
 import momo from './images/momo.png';
 import sport from './images/sport.png';
 import Home from './components/Home';
+import Checkout from './components/Checkout';
 
 const App = () => {
   const [info, setInfo] = useState([
@@ -92,6 +93,8 @@ const App = () => {
   ]);
 
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [itemCount, setItemCount] = useState(0);
 
   const RouteLinks = info.map((item, index) => (
     <Route
@@ -103,6 +106,10 @@ const App = () => {
           info={info}
           cart={cart}
           setCart={setCart}
+          total={total}
+          setTotal={setTotal}
+          itemCount={itemCount}
+          setItemCount={setItemCount}
         />
       }
     />
@@ -111,10 +118,14 @@ const App = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <Header />
+        <Header itemCount={itemCount} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Main info={info} />} />
+          <Route
+            path="/checkout"
+            element={<Checkout total={total} cart={cart} info={info} />}
+          />
           {RouteLinks}
         </Routes>
         <Footer />
