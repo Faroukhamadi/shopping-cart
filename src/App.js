@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Product from './components/Product';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Products from './components/Products';
 import airForceO7 from "./images/air-force-'07.png";
 import airForceAla from './images/air-force-ala.png';
@@ -18,8 +18,22 @@ import sport from './images/sport.png';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 import Purchase from './components/Purchase';
+import {
+  collection,
+  doc,
+  getDocs,
+  getFirestore,
+  setDoc,
+  addDoc,
+} from 'firebase/firestore';
+import { firebase } from 'firebase/app';
+import { db } from './firebase-config';
 
 const App = () => {
+  // Add a new document in collection
+
+  const [cartd, setCartd] = useState([]);
+  const cartCollectionRef = collection(db, 'cart');
   const [info, setInfo] = useState([
     {
       name: "Nike Air Force 1 '07 SE",
@@ -97,6 +111,10 @@ const App = () => {
   const [total, setTotal] = useState(0);
   const [itemCount, setItemCount] = useState(0);
 
+  const populateCart = async () => {
+    await addDoc(cartCollectionRef, { cart });
+  };
+
   const RouteLinks = info.map((item, index) => (
     <Route
       path={`${item.index}`}
@@ -111,6 +129,7 @@ const App = () => {
           setTotal={setTotal}
           itemCount={itemCount}
           setItemCount={setItemCount}
+          populateCart={populateCart}
         />
       }
     />

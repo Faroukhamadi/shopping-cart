@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const navigate = useNavigate();
 
-  // onClick={() => navigate(`/${product.index}`, { replace: true })}
-
   return (
     <div className="home">
       <h1

@@ -23,6 +23,7 @@ const Product = (props) => {
               ) {
                 props.setCart([...props.cart, props.item]);
               }
+              props.populateCart();
             }}
           >
             <img src={cart} alt="cart" /> ADD TO CART

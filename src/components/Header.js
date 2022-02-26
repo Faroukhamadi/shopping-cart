@@ -2,8 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import cart from '../images/cart.png';
 
-// onClick={() => navigate(`/${product.index}`, { replace: true })}
-
 const Header = (props) => {
   const navigate = useNavigate();
 
