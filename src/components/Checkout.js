@@ -17,7 +17,6 @@ const Checkout = (props) => {
   return (
     <div className="container69">
       <h2 className="checkout-amount">Total Amount: ${props.total}.00</h2>
-      {/* TODO: OnClick here for the goodbye message */}
       <button onClick={() => navigate('/purchase', { replace: true })}>
         Complete Order
       </button>
